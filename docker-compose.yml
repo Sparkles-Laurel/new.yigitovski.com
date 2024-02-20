@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
+    container_name: nginx
+    ports:
+      - "3000:80"
+    depends_on:
+      - php
+  php:
+    build:
+      context: .
+      dockerfile: php-fpm.Dockerfile
+    container_name: php-fpm
+    volumes:
+      #      - "./data:/var/www/html/data:ro"
+      #      - ".env:/var/www/html/.env:ro"
+      - "./:/var/www/html"

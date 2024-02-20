@@ -1,0 +1,126 @@
+{%- macro inplace(fronters, field) -%}
+    {%- if not fronters -%}
+        <span class='quick' data-quick='{{- field -}}'>loading...</span>
+    {%- else -%}
+        {%- for fronter in fronters -%}
+            {{- fronter[field] -}}
+            {{- not loop.last ? ', ' -}}
+        {%- endfor -%}
+    {%- endif -%}
+{%- endmacro -%}
+
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <meta property='og:type' content='website'>
+    <meta property='og:title' content='ivy is gay!'>
+    {% if fronters %}
+        <meta property='og:description'
+              content='{{ _self.inplace(fronters, 'quote') }} - {{ _self.inplace(fronters, 'name') }}'>
+    {% endif %}
+
+    <link rel='stylesheet' href='/assets/style.css'>
+
+    <title>ivy is gay!</title>
+</head>
+
+<body>
+<main>
+    {% if secret %}
+        <h1>haiiiiiiii, i'm ivy! ✨</h1>
+    {% else %}
+        <h1>haiiiiiiii, we're ivy! ✨</h1>
+    {% endif %}
+
+    <noscript>
+        <a href='?force'>click here to load</a>
+    </noscript>
+
+    <p>{{ _self.inplace(fronters, 'quote') }} - {{ _self.inplace(fronters, 'name') }}</p>
+
+    {% if secret %}
+        <p>i use she/her pronouns, am silly, and am very gay developer!</p>
+    {% else %}
+        <p>
+            collectively we go by ivy and use she/her pronouns
+        </p>
+        <p>
+            we're the gayest developers! there are <a href='https://morethanone.info'>many silly people in head</a>
+        </p>
+        <p>
+            {{ _self.inplace(fronters, 'name') }} ({{ _self.inplace(fronters, 'pronouns') }}) is current
+            fronter
+        </p>
+    {% endif %}
+
+    <p>
+        <i>
+            <a href='https://codeberg.org/KanakoTheGay'>🖥️ codeberg</a>
+            /
+            <a href='mailto:kanako@gayest.dev'>✉️ email</a>
+        </i>
+    </p>
+
+    <div class='emoji'>{{ _self.inplace(fronters, 'emoji') }}</div>
+
+    <h2>Showcase</h2>
+
+    <section>
+        <aside>
+            <h3>kanit</h3>
+            <p>toy init system</p>
+            <a href='https://codeberg.org/KanakoTheGay/kanit'>Codeberg</a>
+        </aside>
+
+        <aside>
+            <h3>dotfiles</h3>
+            <p>my personal dotfiles</p>
+            <a href='https://git.gayest.dev/KanakoTheGay/dotfiles'>Codeberg</a>
+        </aside>
+    </section>
+
+    <h2>Services</h2>
+
+    <section>
+        <aside>
+            <h3>sharkey</h3>
+            <p>fediverse instance</p>
+            <a href='https://the.gayest.dev/'>Link</a>
+        </aside>
+
+        <aside>
+            <h3>forgejo</h3>
+            <p>git instance</p>
+            <a href='https://git.gayest.dev/'>Link</a>
+        </aside>
+
+        <aside>
+            <h3>uptime kuma</h3>
+            <p>status tracker</p>
+            <a href='https://status.gayest.dev/'>Link</a>
+        </aside>
+    </section>
+
+    <div class='emoji'>{{ _self.inplace(fronters, 'emoji') }}</div>
+</main>
+
+<footer>
+    <p>
+        <a href='https://fediring.net/previous?host=gayest.dev'>←</a>
+        <a href='https://fediring.net/'>Fediring</a>
+        <a href='https://fediring.net/next?host=gayest.dev'>→</a>
+    </p>
+</footer>
+
+{% if not fronters %}
+    <script src='/assets/load.js'></script>
+{% endif %}
+
+</body>
+
+</html>
