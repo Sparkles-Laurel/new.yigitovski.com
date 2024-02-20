@@ -16,6 +16,4 @@ services:
       dockerfile: php-fpm.Dockerfile
     container_name: php-fpm
     volumes:
-      #      - "./data:/var/www/html/data:ro"
-      #      - ".env:/var/www/html/.env:ro"
       - "./:/var/www/html"

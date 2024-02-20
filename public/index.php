@@ -24,7 +24,7 @@ if (file_exists(__DIR__ . '/../.env')) {
 
 $loader = new FilesystemLoader(__DIR__ . '/../templates');
 $twig = new Environment($loader, [
-//    'cache' => __DIR__ . '/../cache'
+    'cache' => __DIR__ . '/../cache'
 ]);
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
