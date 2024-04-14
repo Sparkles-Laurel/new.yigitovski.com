@@ -1,4 +1,4 @@
-FROM docker.io/composer:lts as deps
+FROM docker.io/composer:2.7 as deps
 
 WORKDIR /app
 COPY --from=docker.io/composer /usr/bin/composer /usr/bin/composer
