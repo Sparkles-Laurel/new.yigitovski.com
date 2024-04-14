@@ -37,20 +37,31 @@
         <h1>haiiiiiiii, we're ivy! ✨</h1>
     {% endif %}
 
-    <noscript>
-        <a href='?force'>click here to load</a>
-    </noscript>
+    {%- if not fronters -%}
+        <noscript>
+            <a href='?force'>click here to load</a>
+        </noscript>
+    {% endif %}
 
     <p>{{ _self.inplace(fronters, 'quote') }} - {{ _self.inplace(fronters, 'name') }}</p>
 
     {% if secret %}
-        <p>i use she/her pronouns, am silly, and am very gay developer!</p>
+        <p>i use she/her pronouns, i am</p>
+        <ul>
+            <li>silly</li>
+            <li>gay</li>
+            <li>gayest developer</li>
+            <li>gayest pro</li>
+            <li>gayest gay</li>
+        </ul>
+        <p>:3</p>
     {% else %}
         <p>
             collectively we go by ivy and use she/her pronouns
         </p>
         <p>
-            we're the gayest developers! there are <a href='https://morethanone.info'>many silly people in head</a>
+            we're the gayest developers, pros, and gays!
+            there are <a href='https://morethanone.info'>many silly people in head</a>
         </p>
         <p>
             {{ _self.inplace(fronters, 'name') }} ({{ _self.inplace(fronters, 'pronouns') }}) is current

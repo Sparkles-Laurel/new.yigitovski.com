@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;700&display=swap');
+@import url('/fonts/SignikaNegative.css');
 
 body {
     font-family: 'Signika Negative', sans-serif;
@@ -35,6 +35,14 @@ aside {
     width: 250px;
     margin: 1rem;
     padding: 1.25rem;
+}
+
+ul  {
+    padding-left: 0;
+}
+
+ul li {
+    list-style-position: inside;
 }
 
 .emoji {

@@ -17,10 +17,8 @@ use const App\FRONTERS_CACHE_KEY;
 
 require_once(__DIR__ . '/../vendor/autoload.php');
 
-if (file_exists(__DIR__ . '/../.env')) {
-    $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__ . '/../');
-    $dotenv->load();
-}
+$dotenv = Dotenv\Dotenv::createMutable(__DIR__ . '/../');
+$dotenv->safeLoad();
 
 $loader = new FilesystemLoader(__DIR__ . '/../templates');
 $twig = new Environment($loader, [
@@ -41,7 +39,7 @@ switch ($path) {
             || (isset($_GET['force']))
         ) {
             try {
-                $fronters = fetch_current_fronters(getenv('SP_TOKEN'), getenv('SP_ID'));
+                $fronters = fetch_current_fronters($_ENV['SP_TOKEN'], $_ENV['SP_ID']);
                 $mapped_fronters = array_map(fn(Member $member) => (array)fetch_context_member($member), $fronters);
                 header('Cache-Control: no-cache');
             } catch (HttpExceptionInterface|DecodingExceptionInterface|TransportExceptionInterface $e) {
@@ -54,20 +52,18 @@ switch ($path) {
                 'index.twig',
                 [
                     'fronters' => $mapped_fronters,
-                    'secret' => !($path == '/f')
+                    'secret' => $path != '/f' && $_SERVER['HTTP_HOST'] != 'vineyard.gayest.systems'
                 ]
             );
         } catch (LoaderError|SyntaxError $e) {
             // shouldn't happen
             http_response_code(500);
             error_log("this shouldn't happen..." . $e->getMessage());
-            echo "this shouldn't happen...";
             exit;
         } catch (RuntimeError $e) {
             // unlikely
             http_response_code(500);
             error_log($e->getMessage());
-            echo 'failed to load page';
             exit;
         }
 
