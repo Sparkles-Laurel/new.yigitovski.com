@@ -8,7 +8,7 @@ RUN --mount=type=bind,source=composer.json,target=composer.json \
     --mount=type=cache,target=/tmp/cache \
     composer install --no-dev --no-interaction --ignore-platform-req=ext-apcu
 
-FROM docker.io/php:8.2-fpm as final
+FROM docker.io/php:8.3-fpm as final
 
 RUN pecl install apcu
 RUN docker-php-ext-enable apcu
