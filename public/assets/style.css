@@ -14,12 +14,12 @@ main {
 h1,
 h2,
 h3 {
-    color: #f78fb3;
+    color: #8ff7f7;
     line-height: 1.5;
 }
 
 a {
-    color: #f78fb3;
+    color: #8ff7c7;
     font-size: medium;
 }
 
@@ -30,7 +30,7 @@ section {
 }
 
 aside {
-    border: 1px solid #ffccde;
+    border: 1px solid #ccffcc;
     border-radius: 5px;
     width: 250px;
     margin: 1rem;
@@ -53,7 +53,7 @@ ul li {
 .emoji::before {
     content: "";
     display: inline-block;
-    border: 1px solid #ffccde;
+    border: 1px solid #ccffcc;
     margin-right: 1%;
     margin-bottom: 3px;
     width: 40%;
@@ -62,7 +62,7 @@ ul li {
 .emoji::after {
     content: "";
     display: inline-block;
-    border: 1px solid #ffccde;
+    border: 1px solid #ccffcc;
     margin-left: 1%;
     margin-bottom: 3px;
     width: 40%;
@@ -70,7 +70,7 @@ ul li {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #1d121c;
+        background-color: #0a2420;
         color: #ffffff;
     }
 }
