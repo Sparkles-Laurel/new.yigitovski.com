@@ -19,21 +19,23 @@
     <meta name='theme-color' content='#f78fb3'>
 
     <meta property='og:type' content='website'>
-    <meta property='og:title' content='ivy is gay!'>
+    <meta property='og:title' content='sparkles-laurel is lesbian!'>
     {% if fronters %}
         <meta property='og:description'
               content='{{ _self.inplace(fronters, 'quote') }} - {{ _self.inplace(fronters, 'name') }}'>
     {% endif %}
 
-    <link rel='stylesheet' href='/assets/style.css'>
+     {% block stylesheets %}
+        <link rel="stylesheet" href="/assets/style.css">
+    {% endblock %}
 
-    <title>ivy is gay!</title>
+    <title>sparkles-laurel is lesbian!</title>
 </head>
 
 <body>
 <main>
     {% if secret %}
-        <h1>haiiiiiiii, i'm sparkles-sericea! ✨</h1>
+        <h1>haiiiiiiii, i'm sparkles-laurel! ✨</h1>
     {% else %}
         <h1>haiiiiiiii, we're the choir! ✨</h1>
     {% endif %}
@@ -47,13 +49,13 @@
     <p>{{ _self.inplace(fronters, 'quote') }} - {{ _self.inplace(fronters, 'name') }}</p>
 
     {% if secret %}
-        <p>i use she/her pronouns, i am</p>
+        <p>i use she/it pronouns, i am</p>
         <ul>
             <li>silly</li>
-            <li>gay</li>
-            <li>gayest developer</li>
-            <li>gayest pro</li>
-            <li>gayest gay</li>
+            <li>lesbian</li>
+            <li>lesbianest developer</li>
+            <li>lesbianest sysadmin</li>
+            <li>lesbianest lesbian</li>
         </ul>
         <p>:3</p>
     {% else %}
@@ -61,7 +63,7 @@
             collectively we go by choir and use we/us pronouns
         </p>
         <p>
-            we're the gayest developers, pros, and gays!
+            we're the lesbianest developers, sysadmins, and lesbians!
             there are <a href='https://morethanone.info'>many silly people in head</a>
         </p>
         <p>
@@ -87,44 +89,39 @@
 
     <section>
         <aside>
-            <h3>kanit</h3>
-            <p>toy init system</p>
-            <a href='https://codeberg.org/KanakoTheGay/kanit'>Codeberg</a>
+            <h3>popcorn</h3>
+            <p>toy kernel</p>
+            <a href='https://github.com/popcorn-kernel/popcorn'>GitHub</a>
         </aside>
 
         <aside>
-            <h3>flake</h3>
-            <p>my personal nixos flake</p>
-            <a href='https://git.gayest.dev/KanakoTheGay/flake'>Codeberg</a>
+            <h3>dciddp</h3>
+            <p>Decentralised Identity Dispatch Protocol</p>
+            <a href='https://github.com/SparkySimp/dciddp'>GitHub</a>
+        </aside>
+
+        <aside>
+            <h3>sshtupid</h3>
+            <p>Newsletter over SSH</p>
+            <a href='https://github.com/SparkySimp/sshtupid'>GitHub</a>
+        </aside>
+        <aside>
+            <h3>rand64</h3>
+            <p>Random sequence generator</p>
+            <a href='https://github.com/SparkySimp/rand64'>GitHub</a>
+        </aside>
+        <aside>
+            <h3>kitty error page!</h3>
+            <p>error page with cat pictures</p>
+            <a href='https://git.gay/Sparky29/cute-error-page'>source</a>
         </aside>
     </section>
 
     <h2>Services</h2>
 
     <section>
-        <aside>
-            <h3>sharkey</h3>
-            <p>fediverse instance</p>
-            <a href='https://the.gayest.dev/'>Link</a>
-        </aside>
-
-        <aside>
-            <h3>iceshrimp</h3>
-            <p>fediverse instance</p>
-            <a href='https://the.gayest.gay/'>Link</a>
-        </aside>
-
-        <aside>
-            <h3>forgejo</h3>
-            <p>git instance</p>
-            <a href='https://git.gayest.dev/'>Link</a>
-        </aside>
-
-        <aside>
-            <h3>uptime kuma</h3>
-            <p>status tracker</p>
-            <a href='https://status.gayest.systems/'>Link</a>
-        </aside>
+    <!-- coming soon -->
+    <h3>coming soon...</h3>
     </section>
 
     <div class='emoji'>{{ _self.inplace(fronters, 'emoji') }}</div>
@@ -132,9 +129,12 @@
 
 <footer>
     <p>
-        <a href='https://fediring.net/previous?host=gayest.dev'>←</a>
+        <small>forked from <a href='https://git.gayest.dev/Vineyard/gayest.dev'><small>gayest.dev</small></a></small>
+    </p>
+    <p>
+        <a href='https://fediring.net/previous?host=yigitovski.com'>←</a>
         <a href='https://fediring.net/'>Fediring</a>
-        <a href='https://fediring.net/next?host=gayest.dev'>→</a>
+        <a href='https://fediring.net/next?host=yigitovski.com'>→</a>
     </p>
 </footer>
 

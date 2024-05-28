@@ -22,7 +22,7 @@ $dotenv->safeLoad();
 
 $loader = new FilesystemLoader(__DIR__ . '/../templates');
 $twig = new Environment($loader, [
-    'cache' => __DIR__ . '/../cache'
+   // 'cache' => __DIR__ . '/../cache'
 ]);
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -52,7 +52,7 @@ switch ($path) {
                 'index.twig',
                 [
                     'fronters' => $mapped_fronters,
-                    'secret' => $path != '/f' && $_SERVER['HTTP_HOST'] != 'vineyard.gayest.systems'
+                    'secret' => $path != '/f' /* && $_SERVER['HTTP_HOST'] != 'vineyard.gayest.systems' */
                 ]
             );
         } catch (LoaderError|SyntaxError $e) {

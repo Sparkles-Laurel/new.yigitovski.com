@@ -20,7 +20,7 @@ readonly class ContextMember
         $this->pronouns = $data['pronouns'] ?? 'unknown';
         $this->quote = $data['quote'] ?? 'unknown';
         $this->song = $data['song'] ?? 'unknown';
-        $this->emoji = $data['emoji'] ?? '💖';
+        $this->emoji = $data['emoji'] ?? '🏳️‍🌈';
         $this->color = $data['color'] ?? '#f5a9b8';
         $this->page = $data['page'] ?? null;
     }

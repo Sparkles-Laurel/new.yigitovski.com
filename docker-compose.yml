@@ -17,5 +17,6 @@ services:
     build: .
     container_name: php-fpm
     volumes:
-      - "./data:/var/www/html/data:ro"
-      - ".env:/var/www/html/.env:ro"
+      # - "./data:/var/www/html/data:ro"
+      # - ".env:/var/www/html/.env:ro"
+        - "./:/var/www/html" 
